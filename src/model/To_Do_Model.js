@@ -9,7 +9,12 @@ status:{
 },
 email:{type:String, default:""},
 duration:{type:Number, default:0},
-deadline:{type:Date}
+deadline:{type:Date},
+ priority: {
+    type: String,
+    enum: ["low", "medium", "high"],
+    default: "medium"
+  }
 },{timestamps:true})
 const ToDo = new mongoose.model("ToDo", toDoSchema)
 module.exports = ToDo

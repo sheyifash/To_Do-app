@@ -6,8 +6,8 @@ const updateTask = async(req, res) => {
 if (!_id) {
     return res.status(400).json("Not found!")
 }
-        const {status, title, description, deadline, duration, email} = req.body
-        const updatedTasks = await ToDo.findByIdAndUpdate(_id, {status, title, description, deadline, duration, email},
+        const {status, title, description, deadline, duration, email, priority} = req.body
+        const updatedTasks = await ToDo.findByIdAndUpdate(_id, {status, title, description, deadline, duration, email, priority},
             {new:true}
         )
         await updatedTasks.save()
